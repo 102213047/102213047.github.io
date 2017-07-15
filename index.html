@@ -1,0 +1,36 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Simulation</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.3/jquery.min.js"></script>
+	<script type="text/javascript">
+		function showPhoto(){
+			var lefttime = document.getElementById('lefttime');
+			var righttime = document.getElementById('righttime');
+			if(lefttime.value<righttime.value){
+				$('#left').show();
+			}
+			else if(lefttime.value>righttime.value){
+				$('#right').show();
+			}
+			else{
+				$('#middle').show();
+			}
+		}
+	</script>
+</head>
+<body>
+	<form id="timeform">
+		<p style="font-size:28pt;color:red">Please enter the time required for the left reader to receive the incoming message:<input id="lefttime" name="lefttime" type="text"></p><br>
+		<p style="font-size:28pt;color:red">Please enter the time required for the right reader to receive the incoming message:<input id="righttime" name="righttime" type="text"></p><br>
+		<input name="ok" type="button" value="ok" onclick="showPhoto()">
+	</form>
+	<img src="images/left.png" id="left" style="left:400px;width:600px;position:absolute;top:300px;height:600px" />
+	<img src="images/middle.png" id="middle" style="left:400px;width:600px;position:absolute;top:300px;height:600px" />
+	<img src="images/right.png" id="right" style="left:400px;width:600px;position:absolute;top:300px;height:600px" />
+	<script>
+		$('#left').hide();
+		$('#middle').hide();
+		$('#right').hide();
+	</script>
+</body>
+</html>
